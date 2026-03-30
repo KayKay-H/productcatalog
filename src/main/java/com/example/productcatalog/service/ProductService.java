@@ -13,6 +13,9 @@ public class ProductService {
     private ProductRepository repo;
 
     public Product save(Product product) {
+        if (product == null) {
+            throw new IllegalArgumentException("Product cannot be null");
+        }
         return repo.save(product);
     }
 
