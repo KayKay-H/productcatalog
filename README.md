@@ -10,25 +10,21 @@ Product Catalog is a Spring Boot web application that allows users to manage and
 
 The application allows users to:
 
-• Navigate through multiple informational pages  
-• Add new products through a validated form  
-• Persist product data to a database  
-• View all stored products in a list  
-• Search and filter products by brand and category  
-• Sort products by different attributes  
-• View preloaded sample data on startup  
+• User registration and login (Spring Security)
+• Role-based access (Admin and User)
+• Add and view products
+• Database persistence using JPA
+• Responsive UI using Bootstrap
 
 ---
 
 ## Technologies Used
 
-- Java 17
-- Spring Boot
+- Spring Security
 - Spring Data JPA
 - Thymeleaf
-- H2 Database
-- Bootstrap 5
-- Maven
+- MySQL
+- Docker
 
 ---
 
@@ -107,6 +103,25 @@ Run the application
 mvn spring-boot:run
 Open the application in your browser
 http://localhost:8080
+
+## Running with Docker (QA Environment):
+
+Build the project:
+mvn clean package
+Run Docker:
+docker-compose up --build
+Open browser:
+http://localhost:8080
+
+## Environment Configuration:
+
+• Dev Profile:
+Uses H2 in-memory database
+• QA Profile:
+Uses MySQL database via Docker
+
+Switching environments is done using:
+spring.profiles.active
 
 ---
 ## H2 Database Console
